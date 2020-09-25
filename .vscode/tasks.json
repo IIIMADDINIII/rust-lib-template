@@ -2,8 +2,10 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cargo",
-			"subcommand": "build",
+			"label": "cargo build",
+			"type": "shell",
+			"command": "cargo",
+			"args": ["build"],
 			"problemMatcher": [
 				"$rustc"
 			],
@@ -11,11 +13,12 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"label": "Rust: cargo build - rust-lib-template"
 		},
 		{
-			"type": "cargo",
-			"subcommand": "test",
+			"label": "cargo test",
+			"type": "shell",
+			"command": "cargo",
+			"args": ["test"],
 			"problemMatcher": [
 				"$rustc"
 			],
@@ -23,7 +26,50 @@
 				"kind": "test",
 				"isDefault": true
 			},
-			"label": "Rust: cargo test - rust-lib-template"
-		}
+		},
+		{
+			"label": "cargo check",
+			"type": "shell",
+			"command": "cargo",
+			"args": ["check"],
+			"problemMatcher": ["$rustc"],
+			"group": "none",
+		},
+		{
+			"label": "cargo build --all-targets",
+			"type": "shell",
+			"command": "cargo",
+			"args": [
+				"build",  "--all-targets"
+			],
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "build",
+		},
+		{
+			"label": "cargo test --all-targets",
+			"type": "shell",
+			"command": "cargo",
+			"args": [
+				"test", "--all-targets"
+			],
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "test",
+		},
+		{
+			"label": "cargo check --all-targets",
+			"type": "shell",
+			"command": "cargo",
+			"args": [
+				"check", "--all-targets"
+			],
+			"problemMatcher": [
+				"$rustc"
+			],
+			"group": "none",
+		},
 	]
 }
